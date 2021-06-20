@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "format": "gulp format-until-commit"
+    "format": "gulp format-until-commit && git add -A ."
   },
   "repository": {
     "type": "git",
