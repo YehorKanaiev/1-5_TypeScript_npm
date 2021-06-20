@@ -5,12 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit-format": "gulp format-until-commit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
+    "prepare": "husky install",
+    "format": "gulp format-until-commit"
   },
   "repository": {
     "type": "git",
