@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit-format": "gulp format-until-commit  && git add -A ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "gulp format-until-commit && git add -A ."
+      "pre-commit": "npm run pre-commit-format"
     }
   },
   "repository": {
