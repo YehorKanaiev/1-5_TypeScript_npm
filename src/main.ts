@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-const RELOAD_DELAY: number = 200; // ms
-const MINUTE: number = 60; // s
-const ON_WORK_LABEL: string = 'Осталось';
+const RELOAD_DELAY: number = 200 // ms
+const MINUTE: number = 60 // s
+const ON_WORK_LABEL: string = "Осталось";
 const WAIT_LABEL: string = 'Укажите время в минутах';
 
 const startButton = document.getElementById('startButton');
