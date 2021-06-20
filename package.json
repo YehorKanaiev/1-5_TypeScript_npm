@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp format-until-commit && git add -A ."
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YehorKanaiev/1-5_TypeScript_npm.git"
@@ -17,15 +22,28 @@
   },
   "homepage": "https://github.com/YehorKanaiev/1-5_TypeScript_npm#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^17.0.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "fancy-log": "^1.3.3",
+    "fs": "0.0.1-security",
     "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-prettier": "^3.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
+    "husky": "^6.0.0",
+    "prettier": "2.3.1",
+    "stream-combiner2": "^1.1.1",
+    "through2": "^4.0.2",
     "tsify": "^5.0.4",
     "typescript": "^4.3.3",
     "vinyl-buffer": "^1.0.1",

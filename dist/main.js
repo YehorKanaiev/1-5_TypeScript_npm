@@ -5671,15 +5671,15 @@
 })));
 
 },{}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
 var __importDefault = undefined && undefined.__importDefault || function (mod) {
     return mod && mod.__esModule ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment_1 = __importDefault(require("moment"));
-var RELOAD_DELAY = 200; //ms
-var MINUTE = 60; //s
+var RELOAD_DELAY = 200; // ms
+var MINUTE = 60; // s
 var ON_WORK_LABEL = 'Осталось';
 var WAIT_LABEL = 'Укажите время в минутах';
 var startButton = document.getElementById('startButton');
@@ -5692,15 +5692,15 @@ plusButton.addEventListener('click', function () {
     if (isBlocked) {
         return;
     }
-    display.innerText = parseInt(display.innerText) + 1 + "";
+    display.innerText = String(parseInt(display.innerText, 10) + 1);
 });
 minusButton.addEventListener('click', function () {
     if (isBlocked) {
         return;
     }
-    var currentValue = parseInt(display.innerText);
+    var currentValue = parseInt(display.innerText, 10);
     if (currentValue > 0) {
-        display.innerText = currentValue - 1 + "";
+        display.innerText = String(currentValue - 1);
     }
 });
 startButton.addEventListener('click', function () {
@@ -5708,13 +5708,12 @@ startButton.addEventListener('click', function () {
         return;
     }
     isBlocked = true;
-    var duration = parseInt(display.innerText);
+    var duration = parseInt(display.innerText, 10);
     var startTime = moment_1.default().unix();
     var endTime = startTime + duration * MINUTE;
     var counter = 0;
     display.innerText = moment_1.default.unix(duration * MINUTE).format('mm:ss');
     timerDescription.innerText = ON_WORK_LABEL;
-    countTime();
     function countTime() {
         var currentTime = moment_1.default().unix();
         if (currentTime < endTime) {
@@ -5725,10 +5724,11 @@ startButton.addEventListener('click', function () {
             setTimeout(countTime, RELOAD_DELAY);
         } else {
             timerDescription.innerText = WAIT_LABEL;
-            display.innerText = duration + "";
+            display.innerText = String(duration);
             isBlocked = false;
         }
     }
+    countTime();
 });
 
 },{"moment":1}]},{},[2])
